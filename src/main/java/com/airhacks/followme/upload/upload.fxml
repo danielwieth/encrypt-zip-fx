@@ -11,9 +11,9 @@
 
 <AnchorPane id="AnchorPane" minHeight="180.0" prefHeight="229.0" prefWidth="525.0" styleClass="airpad" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airhacks.followme.upload.UploadPresenter">
     <children>
-      <Pane layoutX="19.0" layoutY="15.0" prefHeight="154.0" prefWidth="488.0" style="-fx-border-color: black;">
+      <Pane layoutX="19.0" layoutY="15.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="154.0" prefWidth="488.0" style="-fx-border-color: black;">
          <children>
-              <Label fx:id="dragArea" layoutX="192.0" layoutY="69.0" onDragDropped="#dragDropped" onDragEntered="#dragEntered" onDragOver="#dragOver" text="Drag your files here" textAlignment="CENTER" />
+              <Label fx:id="dragArea" layoutX="192.0" layoutY="69.0" text="Drag your files here" textAlignment="CENTER" />
          </children>
       </Pane>
         <Button layoutX="245.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancel" text="Exit" />
