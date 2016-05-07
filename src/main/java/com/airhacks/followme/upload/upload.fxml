@@ -16,6 +16,8 @@
               <Label fx:id="dragArea" layoutX="192.0" layoutY="69.0" text="Drag your files here" textAlignment="CENTER" />
          </children>
       </Pane>
-        <Button layoutX="245.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancel" text="Exit" />
+        <Button fx:id="exitButton" layoutX="245.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancel" text="Exit" />
+      <Label fx:id="statusLabel" layoutX="476.0" layoutY="187.0" prefHeight="25.0" prefWidth="35.0" />
+      <ProgressIndicator fx:id="uploadProgress" layoutX="-14.0" layoutY="182.0" prefHeight="53.0" prefWidth="97.0" progress="0.0" />
     </children>
 </AnchorPane>

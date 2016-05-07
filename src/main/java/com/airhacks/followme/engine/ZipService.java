@@ -1,6 +1,5 @@
 package com.airhacks.followme.engine;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,6 +8,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.concurrent.Service;
@@ -34,8 +34,13 @@ public class ZipService {
 
     private final ZipBackgroundService zipBackgroundService = new ZipBackgroundService();
 
-    public void zip(List<File> files) {
+    public void zip(List<File> files, Supplier<Void> onSucceeded, Supplier<Void> onScheduled) {
+        // TODO: Register event handlers
+        // TODO: Only one file at a time
         zipBackgroundService.setFiles(files);
+        zipBackgroundService.setOnSucceeded(e -> onSucceeded.get());
+        zipBackgroundService.setOnScheduled(e -> onScheduled.get());
+        zipBackgroundService.getProgress();
         zipBackgroundService.start();
     }
 
@@ -94,7 +99,7 @@ public class ZipService {
                         Logger.getLogger(ZipService.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
-                }
+                }              
             };
         }
     }
