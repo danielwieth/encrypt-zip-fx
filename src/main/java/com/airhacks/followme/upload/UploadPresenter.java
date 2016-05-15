@@ -52,7 +52,8 @@ public class UploadPresenter extends NavigatablePresenter implements Initializab
     public void initialize(URL location, ResourceBundle resources) {
         uploadIcon.setIconLiteral("mdi-cloud-upload");
         // Initialize with current directory
-        outputDirectoy = Paths.get(new File("test").getAbsolutePath());
+        File currentDirectory = new File(System.getProperty("user.dir"));
+        outputDirectoy = Paths.get(currentDirectory.getAbsolutePath());
         outputDirectoryProperty = new SimpleStringProperty();
         outputDirectoryProperty.set(outputDirectoy.toAbsolutePath().toString());
         outputPath.textProperty().bind(outputDirectoryProperty);

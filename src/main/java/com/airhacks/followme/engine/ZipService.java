@@ -39,6 +39,7 @@ public class ZipService {
             Supplier<Void> onSucceeded, Supplier<Void> onScheduled) {
         // TODO: Register event handlers
         // TODO: Only one file at a time
+        zipBackgroundService.reset();
         zipBackgroundService.setFiles(files);
         zipBackgroundService.setOutputDirectory(outputDirectory);
         zipBackgroundService.setOnSucceeded(e -> onSucceeded.get());
