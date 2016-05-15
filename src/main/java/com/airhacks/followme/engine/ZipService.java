@@ -56,9 +56,9 @@ public class ZipService {
                 ZipParameters zipParams = new ZipParameters();
                 zipParams.setCompressionMethod(Zip4jConstants.COMP_DEFLATE);
                 zipParams.setCompressionLevel(Zip4jConstants.DEFLATE_LEVEL_NORMAL);
-                zipParams.setEncryptFiles(true);
 
                 if (passwordHolder.encrypt()) {
+                    zipParams.setEncryptFiles(true);
                     zipParams.setEncryptionMethod(Zip4jConstants.ENC_METHOD_STANDARD);
                     zipParams.setPassword(passwordHolder.getPassword());
                 }
