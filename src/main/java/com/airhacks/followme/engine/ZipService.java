@@ -1,9 +1,10 @@
 package com.airhacks.followme.engine;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,21 +35,25 @@ public class ZipService {
 
     private final ZipBackgroundService zipBackgroundService = new ZipBackgroundService();
 
-    public void zip(List<File> files, Supplier<Void> onSucceeded, Supplier<Void> onScheduled) {
+    public void zip(List<File> files, Path outputDirectory,
+            Supplier<Void> onSucceeded, Supplier<Void> onScheduled) {
         // TODO: Register event handlers
         // TODO: Only one file at a time
         zipBackgroundService.setFiles(files);
+        zipBackgroundService.setOutputDirectory(outputDirectory);
         zipBackgroundService.setOnSucceeded(e -> onSucceeded.get());
         zipBackgroundService.setOnScheduled(e -> onScheduled.get());
         zipBackgroundService.getProgress();
         zipBackgroundService.start();
     }
 
-    private void zipImpl(List<File> files) throws IOException, ZipException {
+    private void zipImpl(List<File> files, Path outputDirectory) throws IOException, ZipException {
 
         String fileName = getFileName(files);
+        Path outputFile = outputDirectory.resolve(fileName);
 
-        try (FileOutputStream dest = new FileOutputStream(fileName); ZipOutputStream out = new ZipOutputStream(dest)) {
+        try (OutputStream dest = Files.newOutputStream(outputFile);
+                ZipOutputStream out = new ZipOutputStream(dest)) {
 
             for (int i = 0; i < files.size(); i++) {
                 File file = files.get(i);
@@ -88,18 +93,19 @@ public class ZipService {
     private class ZipBackgroundService extends Service<Void> {
 
         private List<File> files;
+        private Path outputDirectory;
 
         @Override
         protected Task<Void> createTask() {
             return new Task<Void>() {
                 @Override protected Void call() {
                     try {
-                        zipImpl(files);
+                        zipImpl(files, outputDirectory);
                     } catch (IOException | ZipException ex) {
                         Logger.getLogger(ZipService.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     return null;
-                }              
+                }
             };
         }
     }

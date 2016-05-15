@@ -3,13 +3,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
 <AnchorPane id="AnchorPane" minHeight="180.0" prefHeight="230.0" prefWidth="480.0" styleClass="airpad" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airhacks.followme.upload.UploadPresenter">
     <children>
-        <AnchorPane fx:id="dropZone" layoutX="19.0" layoutY="15.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="160.0" prefWidth="428.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <AnchorPane fx:id="dropZone" layoutX="46.0" layoutY="62.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="107.0" prefWidth="430.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <StackedFontIcon iconSize="48" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <opaqueInsets>
@@ -20,8 +21,10 @@
                </children></StackedFontIcon>
          </children>
         </AnchorPane>
-        <Button fx:id="exitButton" layoutX="223.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancel" text="Exit" />
+        <Button fx:id="exitButton" layoutX="223.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancel" text="Exit" AnchorPane.bottomAnchor="5.0" />
         <Label fx:id="statusLabel" layoutX="476.0" layoutY="187.0" AnchorPane.rightAnchor="5.0" />
+      <TextField fx:id="outputPath" editable="false" layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="377.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="outputPathChooser" layoutX="403.0" layoutY="20.0" mnemonicParsing="false" onAction="#onOutputPathChooserClick" text="Output" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
