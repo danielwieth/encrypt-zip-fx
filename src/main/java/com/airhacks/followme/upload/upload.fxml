@@ -4,15 +4,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
 <AnchorPane id="AnchorPane" minHeight="180.0" prefHeight="230.0" prefWidth="480.0" styleClass="airpad" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.airhacks.followme.upload.UploadPresenter">
     <children>
-        <Pane fx:id="dropZone" layoutX="19.0" layoutY="15.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="160.0" prefWidth="428.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <AnchorPane fx:id="dropZone" layoutX="19.0" layoutY="15.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="160.0" prefWidth="428.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
-            <StackedFontIcon iconSize="48" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="145.0" prefWidth="430.0">
+            <StackedFontIcon iconSize="48" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <opaqueInsets>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </opaqueInsets>
@@ -20,7 +19,7 @@
                   <FontIcon fx:id="uploadIcon" iconSize="48" scaleX="4.0" scaleY="4.0" scaleZ="4.0" />
                </children></StackedFontIcon>
          </children>
-        </Pane>
+        </AnchorPane>
         <Button fx:id="exitButton" layoutX="223.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancel" text="Exit" />
         <Label fx:id="statusLabel" layoutX="476.0" layoutY="187.0" AnchorPane.rightAnchor="5.0" />
     </children>
