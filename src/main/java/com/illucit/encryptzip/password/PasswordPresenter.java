@@ -1,7 +1,7 @@
-package com.airhacks.followme.password;
+package com.illucit.encryptzip.password;
 
-import com.airhacks.followme.engine.NavigatablePresenter;
-import com.airhacks.followme.engine.PasswordHolder;
+import com.illucit.encryptzip.engine.NavigatablePresenter;
+import com.illucit.encryptzip.engine.PasswordHolder;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;

@@ -1,4 +1,4 @@
-package com.airhacks.followme.upload;
+package com.illucit.encryptzip.upload;
 
 import com.airhacks.afterburner.views.FXMLView;
 import java.util.function.Function;

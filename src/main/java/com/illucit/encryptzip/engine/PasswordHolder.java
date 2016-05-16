@@ -1,4 +1,4 @@
-package com.airhacks.followme.engine;
+package com.illucit.encryptzip.engine;
 
 import lombok.Data;
 

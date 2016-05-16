@@ -1,4 +1,4 @@
-package com.airhacks.followme.password;
+package com.illucit.encryptzip.password;
 
 import com.airhacks.afterburner.views.FXMLView;
 import java.util.function.Function;

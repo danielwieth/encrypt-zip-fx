@@ -2,3 +2,4 @@ target/
 /dependency-reduced-pom.xml
 .DS_Store
 ZipInvoices-app.jar
+*.zip
