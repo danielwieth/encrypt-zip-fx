@@ -135,6 +135,7 @@
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
+                    <include>**/*.png</include>
                     <include>**/*.fxml</include>
                     <include>**/*.css</include>
                     <include>**/*.properties</include>
@@ -143,6 +144,7 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
+                    <include>**/*.png</include>
                     <include>**/*.xml</include>
                     <include>**/*.css</include>
                     <include>**/*.properties</include>
