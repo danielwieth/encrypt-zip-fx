@@ -14,7 +14,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
-import javax.inject.Inject;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import net.lingala.zip4j.exception.ZipException;
@@ -31,7 +30,7 @@ public class ZipService {
 
     private static final DateFormat FILENAME_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd_hh-mm");
 
-    @Inject private PasswordHolder passwordHolder;
+    private PasswordHolder passwordHolder;
 
     private final ZipBackgroundService zipBackgroundService = new ZipBackgroundService();
 

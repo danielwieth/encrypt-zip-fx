@@ -1,7 +1,8 @@
 package com.illucit.encryptzip.upload;
 
-import com.illucit.encryptzip.engine.NavigatablePresenter;
 import com.illucit.encryptzip.engine.ZipService;
+import de.mknaub.appfx.annotations.Controller;
+import de.mknaub.appfx.controller.AbstractController;
 import java.io.File;
 import java.net.URL;
 import java.nio.file.Path;
@@ -11,7 +12,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,14 +20,15 @@ import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Window;
-import javax.inject.Inject;
+import javax.annotation.PostConstruct;
 import org.kordamp.ikonli.javafx.FontIcon;
 
 /**
  *
  * @author Daniel Wieth
  */
-public class UploadPresenter extends NavigatablePresenter implements Initializable {
+@Controller(url = "/com/illucit/encryptzip/fxml/upload.fxml")
+public class UploadController extends AbstractController {
 
     @FXML private TextField outputPath;
     @FXML private Button outputPathChooser;
@@ -36,19 +37,21 @@ public class UploadPresenter extends NavigatablePresenter implements Initializab
     @FXML private Button exitButton;
     @FXML private FontIcon uploadIcon;
 
-    @Inject private ZipService zipService;
+    private ZipService zipService;
 
     //<editor-fold defaultstate="collapsed" desc="messages">
-    @Inject private String done;
-    @Inject private String working;
-    @Inject private String quit;
-    @Inject private String forceQuit;
+    private String done;
+    private String working;
+    private String quit;
+    private String forceQuit;
     //</editor-fold>
 
     private Path outputDirectoy;
     private StringProperty outputDirectoryProperty;
 
-    @Override
+    private Runnable onCancel;
+
+    @PostConstruct
     public void initialize(URL location, ResourceBundle resources) {
         uploadIcon.setIconLiteral("mdi-cloud-upload");
         // Initialize with current directory
@@ -99,6 +102,14 @@ public class UploadPresenter extends NavigatablePresenter implements Initializab
             this.outputDirectoy = Paths.get(outputFile.getAbsolutePath());
             outputDirectoryProperty.set(outputDirectoy.toAbsolutePath().toString());
         }
+    }
+
+    public void cancel() {
+        onCancel.run();
+    }
+
+    public void setOnCancel(Runnable onCancel) {
+        this.onCancel = onCancel;
     }
 
 }

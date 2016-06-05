@@ -8,7 +8,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.kordamp.ikonli.javafx.StackedFontIcon?>
 
-<AnchorPane id="AnchorPane" minHeight="180.0" prefHeight="230.0" prefWidth="480.0" styleClass="airpad" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.illucit.encryptzip.upload.UploadPresenter">
+<AnchorPane id="AnchorPane" minHeight="180.0" prefHeight="230.0" prefWidth="480.0" styleClass="airpad" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.illucit.encryptzip.upload.UploadController">
     <children>
         <AnchorPane fx:id="dropZone" layoutX="46.0" layoutY="62.0" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="107.0" prefWidth="430.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
