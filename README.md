@@ -1,12 +1,14 @@
 Encrypt Zip
 ===========
 
+Small JavaFX Demo project for workshops and demonstrations.
+
 Usage
 -----
 
 1. Enter a password (or leave it blank)
 2. Drop files in the drag & drop area of the application. The files are zipped,
-encrypted with the password and stored in the output path.
+encrypted with the password (if present) and stored in the output path.
 
 Run
 ---
