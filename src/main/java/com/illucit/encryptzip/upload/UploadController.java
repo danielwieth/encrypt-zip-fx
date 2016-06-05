@@ -5,10 +5,8 @@ import de.mknaub.appfx.annotations.Controller;
 import de.mknaub.appfx.annotations.Link;
 import de.mknaub.appfx.controller.AbstractController;
 import java.io.File;
-import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
@@ -53,7 +51,7 @@ public class UploadController extends AbstractController {
     private Runnable onCancel;
 
     @PostConstruct
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize() {
         uploadIcon.setIconLiteral("mdi-cloud-upload");
         // Initialize with current directory
         File currentDirectory = new File(System.getProperty("user.dir"));

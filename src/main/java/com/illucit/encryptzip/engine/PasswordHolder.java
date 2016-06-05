@@ -1,6 +1,7 @@
 package com.illucit.encryptzip.engine;
 
 import de.mknaub.appfx.annotations.Service;
+import de.mknaub.appfx.services.AbstractService;
 import lombok.Data;
 
 /**
@@ -9,7 +10,7 @@ import lombok.Data;
  */
 @Data
 @Service
-public class PasswordHolder {
+public class PasswordHolder extends AbstractService {
 
     private String password;
 

@@ -1,5 +1,7 @@
 package com.illucit.encryptzip.engine;
 
+import de.mknaub.appfx.annotations.Link;
+import de.mknaub.appfx.services.AbstractService;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -27,11 +29,11 @@ import org.apache.commons.io.FilenameUtils;
  * @author Daniel Wieth
  */
 @de.mknaub.appfx.annotations.Service
-public class ZipService {
+public class ZipService extends AbstractService {
 
     private static final DateFormat FILENAME_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd_hh-mm");
 
-    private PasswordHolder passwordHolder;
+    @Link private PasswordHolder passwordHolder;
 
     private final ZipBackgroundService zipBackgroundService = new ZipBackgroundService();
 
