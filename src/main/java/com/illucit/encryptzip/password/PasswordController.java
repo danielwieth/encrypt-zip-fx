@@ -2,6 +2,7 @@ package com.illucit.encryptzip.password;
 
 import com.illucit.encryptzip.engine.PasswordHolder;
 import de.mknaub.appfx.annotations.Controller;
+import de.mknaub.appfx.annotations.Link;
 import de.mknaub.appfx.controller.AbstractController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -18,7 +19,8 @@ public class PasswordController extends AbstractController {
     @FXML private TextField confirmPassword;
     @FXML private Label hint;
 
-    private PasswordHolder passwordHolder;
+    @Link private PasswordHolder passwordHolder;
+
     private String passwordsUnequal;
     private String passwordsEqual;
 

@@ -26,6 +26,7 @@ import org.apache.commons.io.FilenameUtils;
  *
  * @author Daniel Wieth
  */
+@de.mknaub.appfx.annotations.Service
 public class ZipService {
 
     private static final DateFormat FILENAME_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd_hh-mm");

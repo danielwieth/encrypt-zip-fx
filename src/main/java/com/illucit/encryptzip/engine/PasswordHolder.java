@@ -1,5 +1,6 @@
 package com.illucit.encryptzip.engine;
 
+import de.mknaub.appfx.annotations.Service;
 import lombok.Data;
 
 /**
@@ -7,6 +8,7 @@ import lombok.Data;
  * @author Daniel Wieth
  */
 @Data
+@Service
 public class PasswordHolder {
 
     private String password;

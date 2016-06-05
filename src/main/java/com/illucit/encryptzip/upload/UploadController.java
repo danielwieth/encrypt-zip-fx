@@ -2,6 +2,7 @@ package com.illucit.encryptzip.upload;
 
 import com.illucit.encryptzip.engine.ZipService;
 import de.mknaub.appfx.annotations.Controller;
+import de.mknaub.appfx.annotations.Link;
 import de.mknaub.appfx.controller.AbstractController;
 import java.io.File;
 import java.net.URL;
@@ -37,7 +38,7 @@ public class UploadController extends AbstractController {
     @FXML private Button exitButton;
     @FXML private FontIcon uploadIcon;
 
-    private ZipService zipService;
+    @Link private ZipService zipService;
 
     //<editor-fold defaultstate="collapsed" desc="messages">
     private String done;
